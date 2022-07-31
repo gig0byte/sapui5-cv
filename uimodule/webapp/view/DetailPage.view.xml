@@ -38,7 +38,7 @@
                 <Title
                     text="Work experience"
                     titleStyle="H4"
-                    class="sapUiTinyMarginTopBottom grey-text" />
+                    class="grey-text" />
             </OverflowToolbar>
 
             <commons:Timeline
@@ -70,7 +70,7 @@
                 <Title
                     text="Education"
                     titleStyle="H4"
-                    class="sapUiTinyMarginTopBottom grey-text" />
+                    class="grey-text" />
             </OverflowToolbar>
 
             <commons:Timeline
