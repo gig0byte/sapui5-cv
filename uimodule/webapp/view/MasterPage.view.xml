@@ -7,6 +7,7 @@
     <Page
         backgroundDesign="Solid"
         showHeader="false"
+        showFooter="true"
         class="blue-background">
         <layout:VerticalLayout width="100%">
             <HBox
@@ -14,9 +15,15 @@
                 justifyContent="Center"
                 class="sapUiSmallMarginTop">
                 <Image
+                    densityAware="false"
                     src="{/img/photo}"
-                    press="onPress"
-                    height="200px" />
+                    height="150px" >
+                    <detailBox>
+                        <LightBox>
+                            <LightBoxItem imageSrc="{/img/photo}" />
+                        </LightBox>
+                    </detailBox>
+                </Image>
             </HBox>
 
             <VBox class="sapUiSmallMargin">
@@ -90,5 +97,17 @@
                 </VBox>
             </VBox>
         </layout:VerticalLayout>
+
+        <footer>
+            <OverflowToolbar
+                style="Standard"
+                class="blue-background">
+                <ToolbarSpacer />
+                <Link
+                    text="Source of page"
+                    href="https://github.com/gig0byte/sapui5-cv/"
+                    class="white-text" />
+            </OverflowToolbar>
+        </footer>
     </Page>
 </mvc:View>
