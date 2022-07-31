@@ -17,7 +17,7 @@ sap.ui.define(
              * @public
              * @override
              */
-            init: function () {
+            init() {
                 // call the base component's init function
                 UIComponent.prototype.init.apply(this, arguments);
 
@@ -26,6 +26,9 @@ sap.ui.define(
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+
+                // set the layout model
+                this.setModel(models.createLayoutModel(), "layout");
             },
         });
     }

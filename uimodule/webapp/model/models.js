@@ -12,11 +12,19 @@ sap.ui.define(
         "use strict";
 
         return {
-            createDeviceModel: function () {
+            createDeviceModel() {
                 const oModel = new JSONModel(Device);
                 oModel.setDefaultBindingMode("OneWay");
                 return oModel;
             },
+
+            createLayoutModel() {
+                const oModel = new JSONModel({
+                    layout: Device.system.phone ? "OneColumn" : "TwoColumnsMidExpanded"
+                });
+
+                return oModel;
+            }
         };
     }
 );

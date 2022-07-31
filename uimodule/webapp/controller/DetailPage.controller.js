@@ -47,12 +47,16 @@ sap.ui.define(
         };
 
         return Controller.extend("cv.cv.controller.DetailPage", {
-            onInit: function () {
+            onInit() {
                 // @ts-ignore
                 this.setModel(new sap.ui.model.json.JSONModel(oModel));
 
                 // console.log(this.getModel("detail"));
             },
+
+            pressCloseDetail() {
+                this.getModel("layout").setProperty("/layout", "OneColumn");
+            }
         });
     }
 );

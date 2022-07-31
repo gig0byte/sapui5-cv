@@ -17,7 +17,7 @@
                 <Image
                     densityAware="false"
                     src="{/img/photo}"
-                    height="150px" >
+                    height="150px">
                     <detailBox>
                         <LightBox>
                             <LightBoxItem imageSrc="{/img/photo}" />
@@ -61,9 +61,7 @@
 
                 <VBox items="{path: '/assets', templateShareable:true}">
                     <VBox class="sapUiTinyMarginTop">
-                        <FlexBox
-                            alignContent="Center"
-                            justifyContent="Center">
+                        <FlexBox justifyContent="Center">
                             <Title
                                 text="{
 								    parts: [{
@@ -78,9 +76,7 @@
                                 class="white-text" />
                         </FlexBox>
 
-                        <VBox
-                            items="{ path: 'items',  templateShareable:true}"
-                            class="sapUiTinyMarginTopBottom">
+                        <VBox items="{ path: 'items',  templateShareable:true}">
                             <VBox class="sapUiTinyMarginBottom">
                                 <Text
                                     text="{name}"
@@ -102,11 +98,20 @@
             <OverflowToolbar
                 style="Standard"
                 class="blue-background">
-                <ToolbarSpacer />
+
                 <Link
                     text="Source of page"
                     href="https://github.com/gig0byte/sapui5-cv/"
-                    class="white-text" />
+                    class="white-text sapUiSmallMarginBegin" />
+
+                <ToolbarSpacer />
+
+                <Button
+                    visible="{device>/system/phone}"
+                    type="Ghost"
+                    text="Show More"
+                    class="white-text"
+                    press="pressShowDetal" />
             </OverflowToolbar>
         </footer>
     </Page>

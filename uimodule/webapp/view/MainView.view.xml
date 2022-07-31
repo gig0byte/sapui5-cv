@@ -8,18 +8,19 @@
     xmlns="sap.m"
     xmlns:f="sap.f"
     xmlns:mpn="cv.cv.controls">
-    <Page
-        title="{i18n>title}"
-        showHeader="false">
+    <Page showHeader="false">
         <content>
-            <SplitContainer>
-                <masterPages>
+            <f:FlexibleColumnLayout
+                layout="{layout>/layout}"
+                autoFocus="false">
+                <f:beginColumnPages>
                     <mvc:XMLView viewName="cv.cv.view.MasterPage" />
-                </masterPages>
-                <detailPages>
+                </f:beginColumnPages>
+
+                <f:midColumnPages>
                     <mvc:XMLView viewName="cv.cv.view.DetailPage" />
-                </detailPages>
-            </SplitContainer>
+                </f:midColumnPages>
+            </f:FlexibleColumnLayout>
         </content>
     </Page>
 </mvc:View>

@@ -6,10 +6,10 @@
     xmlns:layout="sap.ui.layout"
     xmlns:mpn="cv.cv.controls"
     controllerName="cv.cv.controller.DetailPage">
-    <Page showHeader="false">
-        <layout:VerticalLayout
-            width="100%"
-            class="sapUiLargeMarginBegin sapUiLargeMarginEnd">
+    <Page
+        showHeader="false"
+        class="{= ${device>/system/phone} ? '' : 'sapUiLargeMarginEnd' }">
+        <layout:VerticalLayout width="100%">
             <OverflowToolbar
                 width="100%"
                 height="auto"
@@ -22,12 +22,24 @@
                         titleStyle="H3"
                         class="sapUiTinyMarginTopBottom grey-text" />
                 </VBox>
+
+                <ToolbarSpacer />
+
+                <Button
+                    visible="{device>/system/phone}"
+                    icon="sap-icon://decline"
+                    class="sapUiTinyMarginEnd"
+                    press="pressCloseDetail" />
             </OverflowToolbar>
 
             <OverflowToolbar
                 width="100%"
                 height="50px">
+                <ToolbarSpacer visible="{device>/system/phone}" />
+
                 <Title text="{i18n>slogan}" />
+
+                <ToolbarSpacer visible="{device>/system/phone}" />
             </OverflowToolbar>
 
             <OverflowToolbar

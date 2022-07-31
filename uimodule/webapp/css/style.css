@@ -26,3 +26,8 @@
     margin-right: 0 !important;
     max-width: 90% !important;
 }
+
+button.white-text > .sapMBtnText  {
+    color: white !important;
+    border-color: white !important;
+}

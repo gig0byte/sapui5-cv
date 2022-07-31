@@ -28,8 +28,9 @@ sap.ui.define(
                 icon: "map"
             }, {
                 name: "linkedin",
+                icon: "arobase",
                 link: "https://www.linkedin.com/in/pavel-mazharov/",
-                value: "@pavel-mazharov",
+                value: "pavel-mazharov",
             }],
 
             assets: [{
@@ -66,9 +67,12 @@ sap.ui.define(
 
         return Controller.extend("cv.cv.controller.MasterPage", {
             onInit() {
-                // @ts-ignore
                 this.setModel(new sap.ui.model.json.JSONModel(oModel, "detail"));
             },
+
+            pressShowDetal() {
+                this.getModel("layout").setProperty("/layout", "TwoColumnsMidExpanded");
+            }
         });
     }
 );
