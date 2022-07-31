@@ -1,0 +1,25 @@
+<mvc:View
+    xmlns:commons="sap.suite.ui.commons"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    controllerName="cv.cv.controller.MainView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:mpn="cv.cv.controls">
+    <Page
+        title="{i18n>title}"
+        showHeader="false">
+        <content>
+            <SplitContainer>
+                <masterPages>
+                    <mvc:XMLView viewName="cv.cv.view.MasterPage" />
+                </masterPages>
+                <detailPages>
+                    <mvc:XMLView viewName="cv.cv.view.DetailPage" />
+                </detailPages>
+            </SplitContainer>
+        </content>
+    </Page>
+</mvc:View>

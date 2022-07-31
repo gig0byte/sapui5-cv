@@ -1,0 +1,28 @@
+/* Enter your custom styles here */
+
+.blue-background {
+    background-color: #4573aa !important;
+}
+
+.white-text {
+    color: #e4e4e4 !important;
+}
+
+.grey-text {
+    color: #495666 !important;
+    font-weight: bold;
+}
+
+.gold-indicator>.sapMPIBar {
+    background: #d2a738 !important;
+}
+
+.sapSuiteUiCommonsTimelineItemShellUser {
+    color: #d2a738 !important;
+}
+
+.sapSuiteUiCommonsTimeline {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 90% !important;
+}
