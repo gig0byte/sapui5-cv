@@ -7,11 +7,7 @@ sap.ui.define(
         "use strict";
 
         return Controller.extend("cv.cv.controller.MainView", {
-            onInit() {},
-
-            onAfterRendering() {
-                console.log(this.getModel("layout"));
-            }
+            onInit() {}
         });
     }
 );
