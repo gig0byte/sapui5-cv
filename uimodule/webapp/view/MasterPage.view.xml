@@ -42,7 +42,7 @@
                     <HBox>
                         <core:Icon
                             visible="{= ${icon} !== undefined }"
-                            src="{= ${icon} !== undefined ? 'sap-icon://' + ${icon} : ''}"
+                            src="{= ${icon} !== undefined ? 'sap-icon://' + ${icon} : 'decline'}"
                             color="#e4e4e4"
                             class="sapUiSmallMarginEnd" />
 

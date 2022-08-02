@@ -19,7 +19,7 @@ sap.ui.define(
             },
             {
                 name: "phone",
-                link: "tel:+7 905 258 43 62",
+                link: "tel:+79052584362",
                 value: "+7 905 258 43 62",
                 icon: "call"
             }, {
