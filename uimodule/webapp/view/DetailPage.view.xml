@@ -68,10 +68,12 @@
                         showDate="{showDate}"
                         userName="{company}"
                         title="{title}"
-                        userNameClickable="false"
+                        userNameClickable="true"
                         text="{description}"
                         userPicture="{logo}"
-                        icon="sap-icon://overlay" />
+                        icon="sap-icon://overlay"
+                        tooltip="{link}"
+                        userNameClicked="companyClick" />
                 </commons:content>
             </commons:Timeline>
 
@@ -99,10 +101,12 @@
                         showDate="{showDate}"
                         userName="{company}"
                         title="{title}"
-                        userNameClickable="false"
+                        userNameClickable="true"
                         text="{description}"
                         userPicture="{logo}"
-                        icon="sap-icon://overlay" />
+                        icon="sap-icon://overlay" 
+                        tooltip="{link}"
+                        userNameClicked="companyClick"/>
                 </commons:content>
             </commons:Timeline>
         </layout:VerticalLayout>

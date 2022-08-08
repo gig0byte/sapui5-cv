@@ -17,7 +17,7 @@
     background: #d2a738 !important;
 }
 
-.sapSuiteUiCommonsTimelineItemShellUser {
+.sapSuiteUiCommonsTimelineItemShellUser > a {
     color: #d2a738 !important;
 }
 
@@ -27,7 +27,23 @@
     max-width: 90% !important;
 }
 
-button.white-text > .sapMBtnText  {
+button.white-text>.sapMBtnText {
     color: white !important;
     border-color: white !important;
+}
+
+/* hide FCL expansion button */
+.sapFFCLArrow>button>span {
+    display: none !important;
+    cursor: not-allowed;
+    background-color: rgb(229, 229, 229) !important;
+    height: 0px;
+}
+
+.sapFFCLArrow>button::before {
+    display: none;
+}
+
+.sapFFCLArrow>button::after {
+    display: none;
 }
