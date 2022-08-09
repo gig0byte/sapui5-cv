@@ -15,10 +15,10 @@
                 height="auto"
                 class="sapUiSmallMarginTop">
                 <VBox>
-                    <Title text="{i18n>name}" />
+                    <Title text="{data>/name}" />
 
                     <Title
-                        text="{i18n>position}"
+                        text="{data>/position}"
                         titleStyle="H3"
                         class="sapUiTinyMarginTopBottom grey-text" />
                 </VBox>
@@ -37,78 +37,53 @@
                 height="50px">
                 <ToolbarSpacer visible="{device>/system/phone}" />
 
-                <Title text="{i18n>slogan}" />
+                <Title text="{data>/slogan}" />
 
                 <ToolbarSpacer visible="{device>/system/phone}" />
             </OverflowToolbar>
 
-            <OverflowToolbar
-                width="100%"
-                height="auto"
-                class="sapUiSmallMarginTop"
-                style="Clear">
-                <Title
-                    text="Work experience"
-                    titleStyle="H4"
-                    class="grey-text" />
-            </OverflowToolbar>
+            <VBox items="{data>/experience}">
+                <items>
+                    <VBox>
+                        <OverflowToolbar
+                            width="100%"
+                            height="auto"
+                            class="sapUiSmallMarginTop"
+                            style="Clear">
+                            <Title
+                                text="{data>title}"
+                                titleStyle="H4"
+                                class="grey-text" />
+                        </OverflowToolbar>
+                        <commons:Timeline
+                            width="100%"
+                            sortOldestFirst="false"
+                            enableScroll="false"
+                            showHeaderBar="false"
+                            showItemFilter="false"
+                            showSearch="false"
+                            showTimeFilter="false"
+                            content="{path: 'data>items', templateShareable: true}">
+                            <commons:content>
+                                <mpn:TimelineItem
+                                    dateTime="{data>ui5Date}"
+                                    showDate="{data>dates}"
+                                    userName="{data>company}"
+                                    title="{data>title}"
+                                    userNameClickable="true"
+                                    text="{data>description}"
+                                    userPicture="{data>logo}"
+                                    icon="sap-icon://overlay"
+                                    tooltip="{data>link}"
+                                    userNameClicked="companyClick" />
+                            </commons:content>
+                        </commons:Timeline>
+                    </VBox>
+                </items>
+            </VBox>
 
-            <commons:Timeline
-                width="100%"
-                sortOldestFirst="false"
-                enableScroll="false"
-                showHeaderBar="false"
-                showItemFilter="false"
-                showSearch="false"
-                showTimeFilter="false"
-                content="{/work}">
-                <commons:content>
-                    <mpn:TimelineItem
-                        dateTime="{date}"
-                        showDate="{showDate}"
-                        userName="{company}"
-                        title="{title}"
-                        userNameClickable="true"
-                        text="{description}"
-                        userPicture="{logo}"
-                        icon="sap-icon://overlay"
-                        tooltip="{link}"
-                        userNameClicked="companyClick" />
-                </commons:content>
-            </commons:Timeline>
 
-            <OverflowToolbar
-                width="100%"
-                height="auto"
-                style="Clear">
-                <Title
-                    text="Education"
-                    titleStyle="H4"
-                    class="grey-text" />
-            </OverflowToolbar>
-
-            <commons:Timeline
-                width="100%"
-                sortOldestFirst="false"
-                enableScroll="false"
-                showHeaderBar="false"
-                showItemFilter="false"
-                showSearch="false"
-                showTimeFilter="false"
-                content="{/education}">
-                <commons:content>
-                    <mpn:TimelineItem
-                        showDate="{showDate}"
-                        userName="{company}"
-                        title="{title}"
-                        userNameClickable="true"
-                        text="{description}"
-                        userPicture="{logo}"
-                        icon="sap-icon://overlay" 
-                        tooltip="{link}"
-                        userNameClicked="companyClick"/>
-                </commons:content>
-            </commons:Timeline>
+            <!-- <OverflowToolbar width="100%" height="auto" style="Clear"> <Title text="Education" titleStyle="H4" class="grey-text" /> </OverflowToolbar> <commons:Timeline width="100%" sortOldestFirst="false" enableScroll="false" showHeaderBar="false" showItemFilter="false" showSearch="false" showTimeFilter="false" content="{/education}"> <commons:content> <mpn:TimelineItem showDate="{showDate}" userName="{company}" title="{title}" userNameClickable="true" text="{description}" userPicture="{logo}" icon="sap-icon://overlay" tooltip="{link}" userNameClicked="companyClick" /> </commons:content> </commons:Timeline> -->
         </layout:VerticalLayout>
     </Page>
 </mvc:View>

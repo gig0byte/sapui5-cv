@@ -16,11 +16,11 @@
                 class="sapUiSmallMarginTop">
                 <Image
                     densityAware="false"
-                    src="{/img/photo}"
+                    src="{data>/photo}"
                     height="150px">
                     <detailBox>
                         <LightBox>
-                            <LightBoxItem imageSrc="{/img/photo}" />
+                            <LightBoxItem imageSrc="{data>/photo}" />
                         </LightBox>
                     </detailBox>
                 </Image>
@@ -36,55 +36,47 @@
                 </FlexBox>
 
                 <VBox
-                    items="{/contacts}"
+                    items="{data>/contacts}"
                     fitContainer="true"
                     class="sapUiTinyMarginBottom">
                     <HBox>
                         <core:Icon
-                            visible="{= ${icon} !== undefined }"
-                            src="{= ${icon} !== undefined ? 'sap-icon://' + ${icon} : 'decline'}"
+                            visible="{= ${data>ui5Icon} !== undefined }"
+                            src="{= ${data>ui5Icon} !== undefined ? 'sap-icon://' + ${data>ui5Icon} : 'decline'}"
                             color="#e4e4e4"
                             class="sapUiSmallMarginEnd" />
 
                         <Link
-                            visible="{= !!${link} }"
-                            text="{value}"
-                            href="{link}"
+                            visible="{= !!${data>href} }"
+                            text="{data>title}"
+                            href="{data>href}"
                             class="white-text" />
 
                         <Text
-                            visible="{= !${link} }"
-                            text="{value}"
+                            visible="{= !${data>href} }"
+                            text="{data>title}"
                             class="white-text" />
                     </HBox>
                 </VBox>
 
-                <VBox items="{path: '/assets', templateShareable:true}">
+                <VBox items="{path: 'data>/assets', templateShareable:true}">
                     <VBox class="sapUiTinyMarginTop">
                         <FlexBox justifyContent="Center">
                             <Title
-                                text="{
-								    parts: [{
-								            value: 'Master.Subtitle.'
-								        }, {
-								            path: 'name'
-								        }
-								    ],
-								    formatter: '.formatter.i18nDynamicKey'
-								}"
+                                text="{data>name}"
                                 level="H2"
                                 class="white-text" />
                         </FlexBox>
 
-                        <VBox items="{ path: 'items',  templateShareable:true}">
+                        <VBox items="{ path: 'data>items',  templateShareable:true}">
                             <VBox class="sapUiTinyMarginBottom">
                                 <Text
-                                    text="{name}"
+                                    text="{data>name}"
                                     class="white-text" />
 
                                 <ProgressIndicator
                                     class="gold-indicator"
-                                    percentValue="{value}"
+                                    percentValue="{data>value}"
                                     showValue="true"
                                     displayOnly="true" />
                             </VBox>
@@ -101,10 +93,19 @@
 
                 <Link
                     text="Source of page"
-                    href="https://github.com/gig0byte/sapui5-cv/"
+                    href="{data>/sources/sapui5}"
+                    target="_blank"
                     class="white-text sapUiSmallMarginBegin" />
 
                 <ToolbarSpacer />
+
+                <Link
+                    text="Vue version"
+                    href="/vue"
+                    target="_blank"
+                    class="white-text sapUiSmallMarginBegin" />
+
+                <ToolbarSpacer visible="{= ${device>/system/phone}}"/>
 
                 <Button
                     visible="{device>/system/phone}"

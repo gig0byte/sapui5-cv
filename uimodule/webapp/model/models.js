@@ -24,6 +24,17 @@ sap.ui.define(
                 });
 
                 return oModel;
+            },
+
+            fetchData(that) {
+                let oDataModel = that.getModel("data");
+
+                // ивент, вызываемый после загрузки данных в модель
+                oDataModel.attachRequestCompleted((oData) => {
+                    that.getModel("data").setData(oDataModel.getData());
+                });
+
+                oDataModel.loadData("/data.json");
             }
         };
     }

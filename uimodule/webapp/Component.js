@@ -29,6 +29,9 @@ sap.ui.define(
 
                 // set the layout model
                 this.setModel(models.createLayoutModel(), "layout");
+
+                // fetch data and set model
+                models.fetchData(this);
             },
         });
     }
