@@ -71,7 +71,7 @@
                         <VBox items="{ path: 'data>items',  templateShareable:true}">
                             <VBox class="sapUiTinyMarginBottom">
                                 <Text
-                                    text="{data>name}"
+                                    text="{data>title}"
                                     class="white-text" />
 
                                 <ProgressIndicator
